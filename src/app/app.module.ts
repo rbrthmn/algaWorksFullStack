@@ -8,15 +8,18 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {TooltipModule} from 'primeng/tooltip';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LancamentosCadastroComponent } from './lancamentos-cadastro/lancamentos-cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LancamentosPesquisaComponent,
-    NavbarComponent
+    NavbarComponent,
+    LancamentosCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     InputTextModule,
     ButtonModule,
     TableModule,
-    TooltipModule
+    TooltipModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
