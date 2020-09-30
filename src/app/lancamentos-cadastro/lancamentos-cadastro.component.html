@@ -11,8 +11,11 @@
 
             <div class="ui-g-6 ui-md-3 ui-fluid">
                 <label>Vencimento</label>
-                <p-calendar dateFormat="dd/mm/yy" [inline]="false" [readonlyInput]="false" [showIcon]="false">
+                <p-calendar dateFormat="dd/mm/yy" [inline]="false" [readonlyInput]="false" [showIcon]="false"
+                    name="vencimento" ngModel #vencimento="ngModel" required>
                 </p-calendar>
+                <app-message [control]="vencimento" error="required" text="Informe uma data de vencimento">
+                </app-message>
             </div>
 
             <div class="ui-g-6 ui-md-3 ui-fluid">
@@ -25,23 +28,27 @@
                 <input pInputText type="text" name="descricao" ngModel #descricao="ngModel" required minlength="5">
 
                 <app-message [control]="descricao" error="required" text="Informe uma descrição"></app-message>
-                <app-message [control]="descricao" error="minlength" text="Mínimo de {{ descricao.errors?.minlength?.requiredLength}} caracteres"></app-message>
-                
+                <app-message [control]="descricao" error="minlength"
+                    text="Mínimo de {{ descricao.errors?.minlength?.requiredLength}} caracteres"></app-message>
+
             </div>
 
             <div class="ui-g-12 ui-md-3 ui-fluid">
                 <label>Valor</label>
-                <p-inputNumber mode="currency" currency="BRL"></p-inputNumber>
+                <p-inputNumber mode="currency" currency="BRL" name="valor" ngModel #valor="ngModel" required></p-inputNumber>
+                <app-message [control]="valor" error="required" text="Informe um valor"></app-message>
             </div>
 
             <div class="ui-g-12 ui-md-6 ui-fluid">
                 <label>Categoria</label>
-                <p-dropdown [options]="categorias" placeholder="Selecione" [filter]="true" #categoria></p-dropdown>
+                <p-dropdown [options]="categorias" placeholder="Selecione" [filter]="true" name="categoria" ngModel
+                    #categoria="ngModel" required></p-dropdown>
             </div>
 
             <div class="ui-g-12 ui-md-6 ui-fluid">
                 <label>Pessoa</label>
-                <p-dropdown [options]="pessoas" placeholder="Selecione" [filter]="true"></p-dropdown>
+                <p-dropdown [options]="pessoas" placeholder="Selecione" [filter]="true" name="pessoa" ngModel
+                    #pessoa="ngModel" required></p-dropdown>
             </div>
 
             <div class="ui-g-12 ui-fluid">
@@ -50,7 +57,8 @@
             </div>
 
             <div class="ui-g-12">
-                <button pButton type="submit" label="Salvar" style="margin-right: 10px;"></button>
+                <button pButton type="submit" label="Salvar" style="margin-right: 10px;"
+                    [disabled]="vencimento.invalid || descricao.invalid || valor.invalid || categoria.invalid || pessoa.invalid"></button>
                 <button pButton type="button" label="Novo" style="margin-right: 10px;"></button>
                 <a href="javascript:;">Voltar para a pesquisa</a>
             </div>

@@ -22,6 +22,9 @@ import { LancamentosCadastroComponent } from './lancamentos-cadastro/lancamentos
 import { PessoasCadastroComponent } from './pessoas-cadastro/pessoas-cadastro.component';
 import { FormsModule } from '@angular/forms';
 import { MessageComponent } from './message/message.component';
+import { LancamentosGridComponent } from './lancamentos-grid/lancamentos-grid.component';
+import { PessoaPesquisaComponent } from './pessoa-pesquisa/pessoa-pesquisa.component';
+import { PessoaGridComponent } from './pessoa-grid/pessoa-grid.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { MessageComponent } from './message/message.component';
     NavbarComponent,
     LancamentosCadastroComponent,
     PessoasCadastroComponent,
-    MessageComponent
+    MessageComponent,
+    LancamentosGridComponent,
+    PessoaPesquisaComponent,
+    PessoaGridComponent
   ],
   imports: [
     BrowserModule,

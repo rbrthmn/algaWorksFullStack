@@ -1,20 +1,12 @@
 <div class="container">
     <div class="ui-g">
         <div class="ui-g-12">
-            <h1>Lançamentos</h1>
+            <h1>Pessoas</h1>
         </div>
 
         <div class="ui-g-12 ui-fluid">
-            <label>Descrição</label>
+            <label>Nome</label>
             <input type="text" pInputText>
-        </div>
-
-        <div class="ui-g-12">
-            <label style="display: block;">Vencimento</label>
-            <input type="text" style="width: 95px;" pInputText>
-
-            <label>até</label>
-            <input type="text" style="width: 95px;" pInputText>
         </div>
 
         <div class="ui-g-12">
@@ -24,7 +16,7 @@
 
     <div class="ui-g">
         <div class="ui-g-12">
-            <app-lancamentos-grid [lancamentos]="lancamentos" ></app-lancamentos-grid>
+            <app-pessoa-grid [pessoas]="pessoas" ></app-pessoa-grid>
         </div>
     </div>
 
